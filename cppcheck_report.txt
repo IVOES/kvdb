@@ -1,0 +1,365 @@
+build-mac/kvdbtest/main.c:123:13: warning: %i in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+            fprintf(stderr, "could not get key %s %i\n", key, i);
+            ^
+build-mac/kvdbtest/main.c:58:7: style: Variable 'r' is reassigned a value before the old one has been used. [redundantAssignment]
+    r = kvdb_get(db, "hoa", 3, &data, &data_size);
+      ^
+build-mac/kvdbtest/main.c:55:4: note: r is assigned
+ r = kvdb_enumerate_keys(db, enumerate_keys_callback, NULL);
+   ^
+build-mac/kvdbtest/main.c:58:7: note: r is overwritten
+    r = kvdb_get(db, "hoa", 3, &data, &data_size);
+      ^
+build-mac/kvdbtest/main.c:102:16: style: Local variable 'key' shadows outer variable [shadowVariable]
+        char * key = keys[i];
+               ^
+build-mac/kvdbtest/main.c:21:12: note: Shadowed declaration
+    uuid_t key;
+           ^
+build-mac/kvdbtest/main.c:102:16: note: Shadow variable
+        char * key = keys[i];
+               ^
+build-mac/kvdbtest/main.c:107:16: style: Local variable 'value' shadows outer variable [shadowVariable]
+        char * value;
+               ^
+build-mac/kvdbtest/main.c:23:12: note: Shadowed declaration
+    uuid_t value;
+           ^
+build-mac/kvdbtest/main.c:107:16: note: Shadow variable
+        char * value;
+               ^
+build-mac/kvdbtest/main.c:109:16: style: Local variable 'key' shadows outer variable [shadowVariable]
+        char * key = keys[i];
+               ^
+build-mac/kvdbtest/main.c:21:12: note: Shadowed declaration
+    uuid_t key;
+           ^
+build-mac/kvdbtest/main.c:109:16: note: Shadow variable
+        char * key = keys[i];
+               ^
+build-mac/kvdbtest/main.c:110:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = kvdb_get(db, key, 36, &value, &value_size);
+            ^
+build-mac/kvdbtest/main.c:30:9: note: Shadowed declaration
+    int r;
+        ^
+build-mac/kvdbtest/main.c:110:13: note: Shadow variable
+        int r = kvdb_get(db, key, 36, &value, &value_size);
+            ^
+build-mac/kvdbtest/main.c:118:16: style: Local variable 'value' shadows outer variable [shadowVariable]
+        char * value;
+               ^
+build-mac/kvdbtest/main.c:23:12: note: Shadowed declaration
+    uuid_t value;
+           ^
+build-mac/kvdbtest/main.c:118:16: note: Shadow variable
+        char * value;
+               ^
+build-mac/kvdbtest/main.c:120:16: style: Local variable 'key' shadows outer variable [shadowVariable]
+        char * key = keys[i];
+               ^
+build-mac/kvdbtest/main.c:21:12: note: Shadowed declaration
+    uuid_t key;
+           ^
+build-mac/kvdbtest/main.c:120:16: note: Shadow variable
+        char * key = keys[i];
+               ^
+build-mac/kvdbtest/main.c:121:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = kvdb_get(db, key, 36, &value, &value_size);
+            ^
+build-mac/kvdbtest/main.c:30:9: note: Shadowed declaration
+    int r;
+        ^
+build-mac/kvdbtest/main.c:121:13: note: Shadow variable
+        int r = kvdb_get(db, key, 36, &value, &value_size);
+            ^
+src/ConvertUTF.c:493:34: style:inconclusive: Function 'kv_getNumBytesForUTF8' argument 1 names different: declaration 'firstByte' definition 'first'. [funcArgNamesDifferent]
+unsigned getNumBytesForUTF8(UTF8 first) {
+                                 ^
+src/ConvertUTF.h:177:34: note: Function 'kv_getNumBytesForUTF8' argument 1 names different: declaration 'firstByte' definition 'first'.
+unsigned getNumBytesForUTF8(UTF8 firstByte);
+                                 ^
+src/ConvertUTF.c:493:34: note: Function 'kv_getNumBytesForUTF8' argument 1 names different: declaration 'firstByte' definition 'first'.
+unsigned getNumBytesForUTF8(UTF8 first) {
+                                 ^
+src/kvassert.c:18:5: warning: %i in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    fprintf(stderr, "%s:%i: assert %s\n", filename, line, condString);
+    ^
+src/kvblock.c:72:16: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+        data = alloca(8 + 4 + 1 + 8 + 8 + (size_t) block_size);
+               ^
+src/kvdb.c:191:36: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+                compressed_value = alloca(sizeof(uint32_t) + max_compressed_size);
+                                   ^
+src/kvdb.c:294:31: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+                current_key = alloca(current_key_size);
+                              ^
+src/kvdb.c:387:35: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+                    current_key = alloca(current_key_size);
+                                  ^
+src/kvdb.c:637:21: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+      current_key = alloca(current_key_size);
+                    ^
+src/kvdb.c:302:31: style: Condition 'allocated!=NULL' is always false [knownConditionTrueFalse]
+                if (allocated != NULL) {
+                              ^
+src/kvdb.c:291:28: note: Assignment 'allocated=NULL', assigned value is 0
+        char * allocated = NULL;
+                           ^
+src/kvdb.c:302:31: note: Condition 'allocated!=NULL' is always false
+                if (allocated != NULL) {
+                              ^
+src/kvdb.c:395:35: style: Condition 'allocated!=NULL' is always false [knownConditionTrueFalse]
+                    if (allocated != NULL) {
+                                  ^
+src/kvdb.c:384:32: note: Assignment 'allocated=NULL', assigned value is 0
+            char * allocated = NULL;
+                               ^
+src/kvdb.c:395:35: note: Condition 'allocated!=NULL' is always false
+                    if (allocated != NULL) {
+                                  ^
+src/kvdb.c:645:21: style: Condition 'allocated!=NULL' is always false [knownConditionTrueFalse]
+      if (allocated != NULL) {
+                    ^
+src/kvdb.c:634:24: note: Assignment 'allocated=NULL', assigned value is 0
+    char * allocated = NULL;
+                       ^
+src/kvdb.c:645:21: note: Condition 'allocated!=NULL' is always false
+      if (allocated != NULL) {
+                    ^
+src/kvdb.c:440:13: style: The scope of the variable 'write_count' can be reduced. [variableScope]
+    ssize_t write_count;
+            ^
+src/kvdb.c:608:0: style:inconclusive: Function 'kvdb_enumerate_keys' argument 3 names different: declaration 'cb_data' definition 'params'. [funcArgNamesDifferent]
+int kvdb_enumerate_keys(kvdb * db, kvdb_enumerate_callback callback, void * cb_data)
+^
+src/kvdb.h:60:77: note: Function 'kvdb_enumerate_keys' argument 3 names different: declaration 'cb_data' definition 'params'.
+int kvdb_enumerate_keys(kvdb * db, kvdb_enumerate_callback callback, void * cb_data);
+                                                                            ^
+src/kvdb.c:608:0: note: Function 'kvdb_enumerate_keys' argument 3 names different: declaration 'cb_data' definition 'params'.
+int kvdb_enumerate_keys(kvdb * db, kvdb_enumerate_callback callback, void * cb_data)
+^
+src/kvdb.c:323:31: style: Local variable 'params' shadows outer argument [shadowArgument]
+    struct find_key_cb_params params;
+                              ^
+src/kvdb.c:318:0: note: Shadowed declaration
+                    findkey_callback callback, void * cb_data)
+^
+src/kvdb.c:323:31: note: Shadow variable
+    struct find_key_cb_params params;
+                              ^
+src/kvdb.c:612:6: style: Local variable 'stop' shadows outer argument [shadowArgument]
+ int stop = 0;
+     ^
+src/kvdb.c:608:0: note: Shadowed declaration
+int kvdb_enumerate_keys(kvdb * db, kvdb_enumerate_callback callback, void * cb_data)
+^
+src/kvdb.c:612:6: note: Shadow variable
+ int stop = 0;
+     ^
+src/kvdbo.cpp:825:11: warning: Identical condition 'r!=0', second condition is always false [identicalConditionAfterEarlyExit]
+    if (r != 0) {
+          ^
+src/kvdbo.cpp:819:11: note: If condition 'r!=0' is true, the function will return/exit
+    if (r != 0) {
+          ^
+src/kvdbo.cpp:825:11: note: Testing identical condition 'r!=0'
+    if (r != 0) {
+          ^
+src/kvdbo.cpp:865:9: style: The scope of the variable 'r' can be reduced. [variableScope]
+    int r;
+        ^
+src/kvdbo.cpp:383:77: performance: Function parameter 'key' should be passed by const reference. [passedByValue]
+static unsigned int find_node_with_boundaries(kvdbo * db, const std::string key,
+                                                                            ^
+src/kvdbo.cpp:404:61: performance: Function parameter 'key' should be passed by const reference. [passedByValue]
+static unsigned int find_node(kvdbo * db, const std::string key)
+                                                            ^
+src/kvdbo.cpp:412:91: performance: Function parameter 'key' should be passed by const reference. [passedByValue]
+static unsigned int find_key_with_boundaries(kvdbo_iterator * iterator, const std::string key,
+                                                                                          ^
+src/kvdbo.cpp:433:75: performance: Function parameter 'key' should be passed by const reference. [passedByValue]
+static unsigned int find_key(kvdbo_iterator * iterator, const std::string key)
+                                                                          ^
+src/kvdbo.cpp:131:9: performance: Inefficient usage of string::find() in condition; string::starts_with() could be faster. [stlIfStrFind]
+    if (key_str.find(std::string(METAKEY_PREFIX, METAKEY_PREFIX_SIZE)) == 0) {
+        ^
+src/kvdbo.cpp:484:9: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+        it ++;
+        ^
+src/kvdbo.cpp:519:17: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+                deletion_it ++;
+                ^
+src/kvdbo.cpp:526:17: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+                addition_it ++;
+                ^
+src/kvdbo.cpp:541:17: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+                deletion_it ++;
+                ^
+src/kvdbo.cpp:553:17: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+                addition_it ++;
+                ^
+src/kvdbo.cpp:861:9: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+        it ++;
+        ^
+src/kvtable.c:94:9: error: Memory leak: table [memleak]
+        return -1;
+        ^
+src/kvunicode.c:241:1: style: Label 'err' is not used. There is #if in function body so the label might be used in code that is removed by the preprocessor. [unusedLabelConfiguration]
+err:
+^
+src/sfts.cpp:189:13: style: The scope of the variable 'left' can be reduced. [variableScope]
+    int32_t left = 0;
+            ^
+src/sfts.cpp:191:9: style: The scope of the variable 'word_kind' can be reduced. [variableScope]
+    int word_kind = 0;
+        ^
+src/sfts.cpp:126:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = add_to_indexer(index, doc, transliterated, wordsids_set);
+            ^
+src/sfts.cpp:112:9: note: Shadowed declaration
+    int r = sfts_remove(index, doc);
+        ^
+src/sfts.cpp:126:13: note: Shadow variable
+        int r = add_to_indexer(index, doc, transliterated, wordsids_set);
+            ^
+src/sfts.cpp:257:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = db_put(index, word_str, value);
+            ^
+src/sfts.cpp:249:9: note: Shadowed declaration
+    int r = db_get(index, word_str, &value);
+        ^
+src/sfts.cpp:257:13: note: Shadow variable
+        int r = db_put(index, word_str, value);
+            ^
+src/sfts.cpp:271:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = db_get(index, nextwordidkey, &str);
+            ^
+src/sfts.cpp:249:9: note: Shadowed declaration
+    int r = db_get(index, word_str, &value);
+        ^
+src/sfts.cpp:271:13: note: Shadow variable
+        int r = db_get(index, nextwordidkey, &str);
+            ^
+src/sfts.cpp:283:21: style: Local variable 'value' shadows outer variable [shadowVariable]
+        std::string value;
+                    ^
+src/sfts.cpp:244:17: note: Shadowed declaration
+    std::string value;
+                ^
+src/sfts.cpp:283:21: note: Shadow variable
+        std::string value;
+                    ^
+src/sfts.cpp:343:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = remove_docid_in_word(index, word, doc);
+            ^
+src/sfts.cpp:326:9: note: Shadowed declaration
+    int r = db_get(index, key, &str);
+        ^
+src/sfts.cpp:343:13: note: Shadow variable
+        int r = remove_docid_in_word(index, word, doc);
+            ^
+src/sfts.cpp:388:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = remove_word(index, word, wordid);
+            ^
+src/sfts.cpp:367:9: note: Shadowed declaration
+    int r = db_get(index, word, &str);
+        ^
+src/sfts.cpp:388:13: note: Shadow variable
+        int r = remove_word(index, word, wordid);
+            ^
+src/sfts.cpp:395:13: style: Local variable 'r' shadows outer variable [shadowVariable]
+        int r = db_put(index, word, buffer);
+            ^
+src/sfts.cpp:367:9: note: Shadowed declaration
+    int r = db_get(index, word, &str);
+        ^
+src/sfts.cpp:395:13: note: Shadow variable
+        int r = db_put(index, word, buffer);
+            ^
+src/sfts.cpp:516:66: style: Parameter 'value' can be declared with const [constParameter]
+static int db_put(sfts * index, std::string & key, std::string & value)
+                                                                 ^
+src/sfts.cpp:456:13: performance: Inefficient usage of string::find() in condition; string::starts_with() could be faster. [stlIfStrFind]
+        if (key_str.find(".") == 0 || key_str.find(",") == 0 || key_str.find("/") == 0) {
+            ^
+src/sfts.cpp:461:17: performance: Inefficient usage of string::find() in condition; string::starts_with() could be faster. [stlIfStrFind]
+            if (key_str.find(transliterated) != 0) {
+                ^
+src/sfts.cpp:189:18: style: Variable 'left' is assigned a value that is never used. [unreadVariable]
+    int32_t left = 0;
+                 ^
+src/sfts.cpp:191:19: style: Variable 'word_kind' is assigned a value that is never used. [unreadVariable]
+    int word_kind = 0;
+                  ^
+src/sfts.h:14:0: information: Skipping configuration '__CHAR16_TYPE__' since the value of '__CHAR16_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+typedef __CHAR16_TYPE__ UChar;
+^
+src/ConvertUTF.c:167:0: style: The function 'kv_ConvertUTF16toUTF32' is never used. [unusedFunction]
+
+^
+src/ConvertUTF.c:118:0: style: The function 'kv_ConvertUTF32toUTF16' is never used. [unusedFunction]
+
+^
+src/ConvertUTF.c:291:0: style: The function 'kv_ConvertUTF32toUTF8' is never used. [unusedFunction]
+
+^
+src/ConvertUTF.c:696:0: style: The function 'kv_ConvertUTF8toUTF32' is never used. [unusedFunction]
+
+^
+src/ConvertUTF.c:687:0: style: The function 'kv_ConvertUTF8toUTF32Partial' is never used. [unusedFunction]
+
+^
+src/ConvertUTF.c:493:0: style: The function 'kv_getNumBytesForUTF8' is never used. [unusedFunction]
+
+^
+src/ConvertUTF.c:503:0: style: The function 'kv_isLegalUTF8String' is never used. [unusedFunction]
+
+^
+src/kvunicode.c:164:0: style: The function 'kv_to_utf8' is never used. [unusedFunction]
+
+^
+src/kvunicode.c:133:0: style: The function 'kv_unicode_deinit' is never used. [unusedFunction]
+
+^
+src/kvdb.c:74:0: style: The function 'kvdb_get_compression_type' is never used. [unusedFunction]
+
+^
+src/kvdb.c:66:0: style: The function 'kvdb_set_compression_type' is never used. [unusedFunction]
+
+^
+src/kvdbo.cpp:248:0: style: The function 'kvdbo_iterator_previous' is never used. [unusedFunction]
+
+^
+src/kvdbo.cpp:191:0: style: The function 'kvdbo_iterator_seek_last' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:59:0: style: The function 'sfts_close' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:65:0: style: The function 'sfts_flush' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:46:0: style: The function 'sfts_free' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:39:0: style: The function 'sfts_new' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:52:0: style: The function 'sfts_open' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:424:0: style: The function 'sfts_search' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:75:0: style: The function 'sfts_set' is never used. [unusedFunction]
+
+^
+src/sfts.cpp:83:0: style: The function 'sfts_set2' is never used. [unusedFunction]
+
+^
+src/kvdbo.cpp:886:0: style: The function 'show_nodes' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
